@@ -1,0 +1,86 @@
+@layer reset, frame-work;
+@import "../css/framework.css" layer(frame-work);
+
+@font-face {
+  font-family: "main-font";
+  src: url("../Fonts/Roboto/Roboto-VariableFont_wdth\,wght.ttf");
+}
+@font-face {
+  font-family: "heading";
+  src: url("../Fonts/EB_Garamond/EBGaramond-Italic-VariableFont_wght.ttf");
+  font-weight: 600;
+  font-style: italic;
+}
+
+@layer reset {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  :root {
+    --c-primary: #aa9166;
+    --c-grey: #666666;
+    --c-secondry: #999999;
+    --c-dark: #121518;
+    --c-white: #ffffff;
+    --c-light: #f8f9fa;
+  }
+  body {
+    font-family: "main-font";
+  }
+
+  h1,
+  h1,
+  h3,
+  h4 {
+    font-family: "heading";
+  }
+  input {
+    outline: none;
+  }
+  img {
+    max-width: 100%;
+    display: block;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  ul {
+    list-style: none;
+  }
+}
+
+.active {
+  color: var(--c-primary);
+}
+
+header li {
+  :hover {
+    color: var(--c-primary);
+  }
+}
+
+@media (width < 767px) {
+  header .container {
+    nav {
+      display: none;
+    }
+    &::before {
+      content: "\f0c9";
+      font-family: var(--fa-family-classic);
+      font-weight: 900;
+      position: absolute;
+      right: var(--px-2x);
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: var(--px-3x);
+      font-size: var(--px-3x);
+      color: var(--c-secondry);
+      border: 1px solid var(--c-grey);
+      padding: 5px var(--px-x);
+    }
+  }
+}
