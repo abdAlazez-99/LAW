@@ -8,6 +8,7 @@
   --px-4x: 2.5rem;
   --px-5x: 3.125rem;
   --px-6x: 3.75rem;
+  --duration: 0.4s;
 }
 
 p {
