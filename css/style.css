@@ -1,4 +1,5 @@
-@layer reset, frame-work;
+@layer vendor, reset, frame-work;
+@import url("/css/all.min.css") layer(vendor);
 @import "../css/framework.css" layer(frame-work);
 
 @font-face {
@@ -167,10 +168,39 @@ header li {
 
 /* end landing */
 /* about */
-.about figure {
-  width: 31.5rem;
+.about {
+  figure {
+    width: 31.5rem;
+  }
+  .content {
+    width: 37.5rem;
+  }
 }
-.about .content {
-  width: 37.5rem;
-}
+
 /* end about */
+/* practice */
+.practice article {
+  .head {
+    background-color: #000;
+    i {
+      width: 80px;
+      height: 75px;
+    }
+  }
+  a {
+    margin: var(--px-2x) auto 0;
+  }
+  h3 {
+    font-size: 30px;
+  }
+  &:hover {
+    .head i {
+      transform: translateY(-7px);
+    }
+    a {
+      background-color: var(--c-primary);
+      color: var(--c-dark);
+    }
+  }
+}
+/* end practice */
