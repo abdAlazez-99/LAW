@@ -1,5 +1,5 @@
 @layer vendor, reset, frame-work;
-@import url("/css/all.min.css") layer(vendor);
+@import url("../css/all.min.css") layer(vendor);
 @import "../css/framework.css" layer(frame-work);
 
 @font-face {
