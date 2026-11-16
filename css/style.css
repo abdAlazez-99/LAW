@@ -204,3 +204,47 @@ header li {
   }
 }
 /* end practice */
+/* features */
+.features .container {
+  align-items: flex-start;
+}
+.features .content {
+  flex: 1;
+  article {
+    .icon {
+      min-width: 30%;
+      height: 200px;
+      i {
+        min-width: 70%;
+        height: 100px;
+        background-color: #000;
+        transition-property: transform;
+      }
+    }
+
+    .text {
+      h3::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -10px;
+        width: 100px;
+        height: 2px;
+        background-color: var(--c-primary);
+      }
+      p {
+        max-width: 400px;
+      }
+    }
+
+    &:hover {
+      i {
+        transform: translateX(10px);
+      }
+    }
+  }
+}
+.features figure {
+  width: 450px;
+}
+/* end features */
