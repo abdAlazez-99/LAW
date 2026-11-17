@@ -52,6 +52,9 @@ html {
 .gap-10 {
   gap: var(--px-x);
 }
+.gap-15 {
+  gap: var(--px-15);
+}
 .gap-20 {
   gap: var(--px-2x);
 }
@@ -134,6 +137,9 @@ html {
 }
 .pt-20 {
   padding-top: var(--px-2x);
+}
+.pt-30 {
+  padding-top: var(--px-3x);
 }
 
 .pr-5 {

@@ -248,3 +248,26 @@ header li {
   width: 450px;
 }
 /* end features */
+/* Attorneys */
+
+.Attorneys article ul {
+  height: 35px;
+  width: 60%;
+  top: -17px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition-property: width;
+  li {
+    transition-property: color;
+    &:hover {
+      color: var(--c-light);
+    }
+  }
+}
+.Attorneys article {
+  width: 275px;
+  &:hover ul {
+    width: 100%;
+  }
+}
+/* end Attorneys */
