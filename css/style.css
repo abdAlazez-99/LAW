@@ -271,3 +271,62 @@ header li {
   }
 }
 /* end Attorneys */
+/* question */
+.question figure {
+  max-width: 500px;
+}
+.question .content {
+  counter-reset: articles;
+  width: 500px;
+}
+.question .content label {
+  height: 80px;
+  transition-property: height;
+  border-top: 1px solid var(--c-primary);
+  &:has(input[type="checkbox"]:checked) {
+    height: 150px;
+    .top p::after {
+      content: "\f068";
+    }
+  }
+  &:last-of-type {
+    border-bottom: 1px solid var(--c-primary);
+    margin-bottom: var(--px-2x);
+  }
+}
+.question label .top {
+  input[type="checkbox"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+  p {
+    counter-increment: articles;
+    padding-left: 55px;
+    &::before,
+    &::after {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    &::before {
+      content: counter(articles);
+      color: var(--c-primary);
+      font-size: 20px;
+      background-color: var(--c-dark);
+      left: 0;
+      padding: 5px 15px;
+    }
+    &::after {
+      content: "\f067";
+      font-family: var(--fa-family-classic);
+      font-weight: 900;
+      right: 0;
+      font-size: 14px;
+    }
+  }
+}
+.question:has(input[type="checkbox"]:checked) figure img {
+  scale: 1.02;
+}
+/* end question */

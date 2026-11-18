@@ -186,6 +186,9 @@ html {
 .pl-25 {
   padding-left: calc(5px + var(--px-2x));
 }
+.pl-40 {
+  padding-left:  var(--px-4x);
+}
 /* end padding */
 
 /* border */
