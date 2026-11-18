@@ -330,3 +330,21 @@ header li {
   scale: 1.02;
 }
 /* end question */
+.review article {
+  width: 275px;
+  &::before {
+    content: "\f10e";
+    font-weight: 900;
+    font-family: var(--fa-family-classic);
+    font-size: 50px;
+    transform: rotate(45deg);
+    position: absolute;
+    top: -8px;
+    right: -8px;
+  }
+}
+.review article figure {
+  img {
+    width: 70px;
+  }
+}
