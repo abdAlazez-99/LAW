@@ -330,6 +330,7 @@ header li {
   scale: 1.02;
 }
 /* end question */
+/* review */
 .review article {
   width: 275px;
   &::before {
@@ -348,3 +349,17 @@ header li {
     width: 70px;
   }
 }
+/* end review */
+/* blog */
+.blog article {
+  width: 370px;
+  figure img {
+    width: 100%;
+  }
+  a:hover {
+    color: var(--c-dark)
+  }
+}
+/* end blog */
+
+
