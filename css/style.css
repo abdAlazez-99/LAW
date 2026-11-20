@@ -81,6 +81,7 @@
   margin-bottom: var(--px-2x);
   font-size: clamp(1.563rem, calc(0.994rem + 2.841vw), 3.125rem);
   text-align: center;
+  z-index: 1;
   &::before,
   &::after {
     content: "";
@@ -357,9 +358,46 @@ header li {
     width: 100%;
   }
   a:hover {
-    color: var(--c-dark)
+    color: var(--c-dark);
   }
 }
 /* end blog */
 
+/* form */
 
+.form {
+  width: 900px;
+  max-width: 100%;
+  margin: 80px auto;
+}
+.form h2 {
+  &::before,
+  &::after {
+    border-block-color: var(--c-white);
+  }
+}
+
+.form form {
+  width: fit-content;
+  margin: auto;
+  border: 2px solid var(--c-dark);
+  transition-property: border;
+  &:has(input[type="email"]:focus) {
+    border: 3px solid var(--c-secondary);
+  }
+  input[type="email"] {
+    border: none;
+    width: 300px;
+    font-size: 18px;
+  }
+  input[type="submit"] {
+    padding-block: 5px;
+    font-size: 18px;
+    transition-property: color, background-color;
+    &:hover {
+      background-color: var(--c-primary);
+      color: var(--c-dark);
+    }
+  }
+}
+/* end form */
