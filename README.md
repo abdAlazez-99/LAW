@@ -36,30 +36,21 @@ A modern, responsive landing page for a law firm, built with HTML5 and CSS3. The
 
 ```text
 LAW/
-│
-├── Fonts/
-│   ├── EB_Garamond/
-│   └── Roboto/
-│
 ├── css/
-│   ├── all.min.css
-│   ├── framework.css
-│   └── style.css
+│   ├── all.min.css        # Font Awesome core stylesheet
+│   ├── framework.css      # Custom reusable CSS utility classes
+│   └── style.css          # Main layout, components & responsive styles
 │
-├── img/
-│   ├── about.jpg
-│   ├── carousel-1.jpg
-│   ├── carousel-2.jpg
-│   ├── carousel-3.jpg
-│   ├── feature.jpg
-│   └── ...
+├── Fonts/                 # Self-hosted typography files
+│   ├── EB_Garamond/       # Serif font family for headings
+│   └── Roboto/            # Sans-serif font family for body text
 │
-├── webfonts/
+├── img/                   # Optimized images, hero sliders & section assets
+├── webfonts/              # Font Awesome icon font files
 │
-├── index.html
-├── README.md
-└── .gitignore
-```
+├── index.html             # Main semantic HTML5 entry point
+├── README.md              # Project documentation
+└── .gitignore             # Git ignored files configuration
 
 ## 🚀 Getting Started
 
