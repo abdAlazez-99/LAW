@@ -76,7 +76,7 @@ html {
   grid-template-columns: repeat(auto-fill, minmax(18.75rem, 1fr));
 }
 .four-columns {
-  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(15.5rem, 1fr));
 }
 
 /* end layout */
@@ -187,7 +187,7 @@ html {
   padding-left: calc(5px + var(--px-2x));
 }
 .pl-40 {
-  padding-left:  var(--px-4x);
+  padding-left: var(--px-4x);
 }
 /* end padding */
 
@@ -317,6 +317,9 @@ html {
 }
 .bg-dark {
   background-color: var(--c-dark);
+}
+.bg-black {
+  background-color: #000;
 }
 /* end background */
 

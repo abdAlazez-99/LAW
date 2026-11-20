@@ -368,11 +368,9 @@ header li {
 .form {
   width: 900px;
   max-width: 100%;
-  margin: 80px auto;
-}
-.form h2 {
-  &::before,
-  &::after {
+  margin: 80px auto -85px;
+  h2::before,
+  h2::after {
     border-block-color: var(--c-white);
   }
 }
@@ -401,3 +399,48 @@ header li {
   }
 }
 /* end form */
+footer {
+  padding-top: 180px;
+  padding-bottom: var(--px-3x);
+  .col-1 p {
+    text-wrap: balance;
+  }
+}
+
+footer li {
+  width: fit-content;
+}
+
+footer :where(.col-2, .col-3) li {
+  transition-property: color, letter-spacing;
+  &::before {
+    content: "\f105";
+    font-family: var(--fa-family-classic);
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  &:hover {
+    color: var(--c-primary);
+    letter-spacing: 1px;
+  }
+}
+
+footer .col-4 li {
+  transition-property: color;
+  &:hover {
+    color: var(--c-secondary)
+  }
+}
+
+footer .f-menue li:not(:last-child) {
+  border-right: 1px solid var(--c-grey)
+}
+
+@media (min-width: 68rem) {
+  .columns {
+    grid-template-columns: 1.5fr repeat(3, 1fr);
+  }
+}
