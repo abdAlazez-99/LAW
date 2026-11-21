@@ -12,7 +12,7 @@
 <br />
 
 <a href="https://abdalazez-99.github.io/LAW/" target="_blank">
-  <img src="img/about.jpg" alt="LAW Firm Website Preview" width="760" />
+  <img src="img/portfolio-4.jpg" alt="LAW Firm Website Preview" width="760" />
 </a>
 
 </div>
