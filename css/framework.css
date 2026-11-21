@@ -109,6 +109,9 @@ html {
 .p-block-10 {
   padding-block: 10px;
 }
+.p-block-15 {
+  padding-block: var(--px-15);
+}
 .p-block-20 {
   padding-block: 20px;
 }
@@ -286,16 +289,16 @@ html {
 
 /* border radius */
 .rad-6 {
-  border-radius: 5px;
+  border-radius: 6px;
 }
 .rad-10 {
-  border-radius: 10px;
+  border-radius: var(--px-x);
 }
 .rad-20 {
-  border-radius: 20px;
+  border-radius: var(--px-2x);
 }
 .rad-30 {
-  border-radius: 30px;
+  border-radius: var(--px-3x);
 }
 .rad-half {
   border-radius: 50%;
@@ -433,8 +436,8 @@ html {
     background-color var(--duration);
   cursor: pointer;
   &:hover {
-    color: var(--bs-primary);
-    background-color: var(--bs-dark);
+    color: var(--c-primary);
+    background-color: var(--c-dark);
   }
 }
 
@@ -462,5 +465,12 @@ html {
   transition: color var(--duration);
   &:hover {
     color: var(--c-primary);
+  }
+}
+
+.bg-to-black {
+  transition: background-color var(--duration);
+  &:hover {
+    background-color: #000;
   }
 }

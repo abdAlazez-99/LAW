@@ -5,12 +5,14 @@
 @font-face {
   font-family: "main-font";
   src: url("../Fonts/Roboto/Roboto-VariableFont_wdth\,wght.ttf");
+  font-display: swap;
 }
 @font-face {
   font-family: "heading";
   src: url("../Fonts/EB_Garamond/EBGaramond-Italic-VariableFont_wght.ttf");
   font-weight: 700;
   font-style: italic;
+  font-display: swap;
 }
 
 @layer reset {
@@ -100,6 +102,14 @@
   }
 }
 
+.arrow-up {
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  bottom: var(--px-x);
+  right: var(--px-x);
+}
+
 /* header */
 header {
   position: sticky;
@@ -108,13 +118,8 @@ header {
   z-index: 999;
   width: 100%;
 }
-header li {
-  :hover {
-    color: var(--c-primary);
-  }
-}
 
-@media (width < 767px) {
+@media (width < 50rem) {
   header .container {
     nav {
       display: none;
@@ -128,8 +133,7 @@ header li {
       top: 50%;
       transform: translateY(-50%);
       font-size: var(--px-3x);
-      font-size: var(--px-3x);
-      color: var(--c-secondry);
+      color: var(--c-secondary);
       border: 1px solid var(--c-grey);
       padding: 5px var(--px-x);
     }
@@ -181,18 +185,15 @@ header li {
 /* end about */
 /* practice */
 .practice article {
-  .head {
-    background-color: #000;
-    i {
-      width: 80px;
-      height: 75px;
-    }
+  .head i {
+    width: calc(var(--px-4x) * 2);
+    height: 75px;
   }
   a {
     margin: var(--px-2x) auto 0;
   }
   h3 {
-    font-size: 30px;
+    font-size: var(--px-3x);
   }
   &:hover {
     .head i {
@@ -209,42 +210,39 @@ header li {
 .features .container {
   align-items: flex-start;
 }
-.features .content {
-  flex: 1;
-  article {
-    .icon {
-      min-width: 30%;
-      height: 200px;
-      i {
-        min-width: 70%;
-        height: 100px;
-        background-color: #000;
-        transition-property: transform;
-      }
+.features article {
+  .icon {
+    min-width: 30%;
+    height: 12.5rem;
+    i {
+      min-width: 70%;
+      height: 6.25rem;
+      transition-property: transform;
     }
+  }
 
-    .text {
-      h3::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: -10px;
-        width: 100px;
-        height: 2px;
-        background-color: var(--c-primary);
-      }
-      p {
-        max-width: 400px;
-      }
+  .text {
+    h3::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+      width: 6.25rem;
+      height: 2px;
+      background-color: var(--c-primary);
     }
+    p {
+      max-width: 400px;
+    }
+  }
 
-    &:hover {
-      i {
-        transform: translateX(10px);
-      }
+  &:hover {
+    i {
+      transform: translateX(10px);
     }
   }
 }
+
 .features figure {
   width: 450px;
 }
@@ -267,6 +265,9 @@ header li {
 }
 .Attorneys article {
   width: 275px;
+  figure img {
+    width: 100%;
+  }
   &:hover ul {
     width: 100%;
   }
@@ -276,59 +277,60 @@ header li {
 .question figure {
   max-width: 500px;
 }
-.question .content {
-  counter-reset: articles;
-  width: 500px;
-}
-.question .content label {
-  height: 80px;
-  transition-property: height;
+
+.faq-item {
+  interpolate-size: allow-keywords;
+  counter-increment: articles;
   border-top: 1px solid var(--c-primary);
-  &:has(input[type="checkbox"]:checked) {
-    height: 150px;
-    .top p::after {
-      content: "\f068";
-    }
-  }
+
   &:last-of-type {
     border-bottom: 1px solid var(--c-primary);
     margin-bottom: var(--px-2x);
   }
-}
-.question label .top {
-  input[type="checkbox"] {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-  }
-  p {
-    counter-increment: articles;
-    padding-left: 55px;
-    &::before,
-    &::after {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
+
+  summary {
+    list-style: none;
+    &::-webkit-details-marker {
+      display: none;
     }
+
     &::before {
       content: counter(articles);
       color: var(--c-primary);
-      font-size: 20px;
       background-color: var(--c-dark);
-      left: 0;
       padding: 5px 15px;
     }
+
     &::after {
       content: "\f067";
       font-family: var(--fa-family-classic);
       font-weight: 900;
-      right: 0;
       font-size: 14px;
+      margin-inline-start: auto; 
+      transition: transform var(--duration) ease;
     }
   }
-}
-.question:has(input[type="checkbox"]:checked) figure img {
-  scale: 1.02;
+
+  &[open] summary::after {
+    content: "\f068";
+    transform: rotate(180deg);
+  }
+
+  &::details-content {
+    block-size: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition:
+      block-size var(--duration) ease,
+      opacity var(--duration) ease,
+      content-visibility var(--duration) ease allow-discrete;
+  }
+
+  &[open]::details-content {
+    block-size: auto;
+    opacity: 1;
+  }
+
 }
 /* end question */
 /* review */
@@ -431,12 +433,12 @@ footer :where(.col-2, .col-3) li {
 footer .col-4 li {
   transition-property: color;
   &:hover {
-    color: var(--c-secondary)
+    color: var(--c-secondary);
   }
 }
 
 footer .f-menue li:not(:last-child) {
-  border-right: 1px solid var(--c-grey)
+  border-right: 1px solid var(--c-grey);
 }
 
 @media (min-width: 68rem) {
